@@ -85,7 +85,7 @@ export default function DocsPage() {
                   <p className="mb-2">Query NFTs by token ID, owner, or contract address.</p>
                   <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded font-mono text-sm">
                     <p>Parameters:</p>
-                    <p>- type: "tokenId" | "owner" | "contract"</p>
+                    <p>- type: &quot;tokenId&quot; | &quot;owner&quot; | &quot;contract&quot;</p>
                     <p>- query: string</p>
                   </div>
                 </div>
@@ -173,7 +173,7 @@ console.log(tokenData.token);`}</pre>
               </div>
 
               <h3 className="text-2xl font-semibold mb-3">Contract Integration</h3>
-              <p className="mb-4">To integrate with smart contracts, you'll need:</p>
+              <p className="mb-4">To integrate with smart contracts, you&apos;ll need:</p>
               <ol className="list-decimal list-inside space-y-2">
                 <li>Contract ABI (Application Binary Interface)</li>
                 <li>Contract address on your target network</li>

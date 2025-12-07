@@ -83,12 +83,12 @@ export default function Home() {
                 >
                   View Documentation
                 </Link>
-                <a 
+                <Link 
                   href="/docs/openapi" 
                   className="px-6 py-2 border-2 border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 transition-colors"
                 >
                   API Docs
-                </a>
+                </Link>
               </div>
             </div>
           </div>
