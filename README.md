@@ -2,6 +2,8 @@
 
 A comprehensive blockchain explorer for the Block And Play ecosystem, providing visibility into NFTs, tokens, evolution history, and smart contracts across testnet and mainnet environments.
 
+![BAP Explorer Home](./public/images/home-page.png)
+
 ## Features
 
 - 🎨 **NFT Explorer**: Browse and query NFT collections, metadata, and ownership
@@ -76,12 +78,31 @@ bap-explorer/
 
 ## Architecture
 
+The BAP Explorer follows a modern three-layer architecture for optimal performance and maintainability.
+
+![Architecture Diagram](./public/images/architecture-diagram.svg)
+
 ### Technology Stack
 
 - **Frontend**: Next.js 14, React 18, TypeScript
 - **Styling**: Tailwind CSS
 - **API**: Next.js API Routes with OpenAPI specification
 - **Blockchain Integration**: Ready for Web3.js/ethers.js integration
+
+### Query and Visualization Flow
+
+The application follows a clear data flow from user interaction to blockchain query and back:
+
+![Query Flow Diagram](./public/images/query-flow-diagram.svg)
+
+**Flow Steps:**
+1. User enters search query in the web interface
+2. Frontend validates input and sends HTTP request to API
+3. API Routes process the request and query blockchain via RPC
+4. Blockchain returns data (NFT ownership, token balances, etc.)
+5. API formats response as JSON
+6. Frontend updates UI with received data
+7. User visualizes the results in cards, tables, or timelines
 
 ### API Endpoints
 
@@ -96,12 +117,31 @@ View the complete API documentation at `/docs/openapi` when running the applicat
 
 ## Documentation
 
-Comprehensive documentation is available at:
+Comprehensive documentation is available:
 
-- **Main Documentation**: Visit `/docs` in the application
+- **Main Documentation**: Visit `/docs` in the application or [view the docs page](http://localhost:3000/docs) when running
 - **OpenAPI Specification**: Visit `/docs/openapi` for the complete API spec
-- **Architecture Guide**: See the Architecture section in `/docs`
-- **Integration Guide**: Learn how to integrate with contracts in `/docs`
+- **Architecture Guide (Português)**: See [docs/arquitetura.md](./docs/arquitetura.md) for detailed architecture documentation
+- **Integration Guide**: Learn how to integrate with contracts in [docs/CONTRACT_INTEGRATION.md](./docs/CONTRACT_INTEGRATION.md)
+
+### Interface Screenshots
+
+#### Home Page
+![Home Page](./public/images/home-page.png)
+
+The home page provides quick access to all explorer features with intuitive navigation cards.
+
+#### NFT Explorer
+![NFT Explorer](./public/images/nfts-page.png)
+
+Search and browse NFTs by token ID, owner address, or contract address with responsive grid layout.
+
+### Architecture Documentation
+
+For detailed information about the system architecture, data flow, and technical implementation, please refer to:
+- **[docs/arquitetura.md](./docs/arquitetura.md)** - Comprehensive architecture documentation in Portuguese
+- **[docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md)** - English version of architecture documentation
+- **[docs/CONTRACT_INTEGRATION.md](./docs/CONTRACT_INTEGRATION.md)** - Smart contract integration guide
 
 ## Network Support
 
