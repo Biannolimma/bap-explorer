@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <defs>
+    <style>
+      .box { fill: #ffffff; stroke: #3b82f6; stroke-width: 2; }
+      .box-frontend { fill: #3b82f6; stroke: #1e40af; stroke-width: 2; }
+      .box-api { fill: #10b981; stroke: #059669; stroke-width: 2; }
+      .box-blockchain { fill: #f59e0b; stroke: #d97706; stroke-width: 2; }
+      .box-tech { fill: #8b5cf6; stroke: #6d28d9; stroke-width: 2; }
+      .text { fill: #1f2937; font-family: Arial, sans-serif; font-size: 13px; }
+      .text-white { fill: #ffffff; font-family: Arial, sans-serif; font-size: 13px; }
+      .text-small { fill: #ffffff; font-family: Arial, sans-serif; font-size: 11px; }
+      .text-title { fill: #1f2937; font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; }
+      .text-subtitle { fill: #1f2937; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .arrow { fill: none; stroke: #6b7280; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#6b7280" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="30" class="text-title" text-anchor="middle">Arquitetura do BAP Explorer</text>
+  
+  <!-- Frontend Layer -->
+  <rect x="50" y="60" width="800" height="150" rx="5" class="box-frontend"/>
+  <text x="450" y="85" class="text-white" text-anchor="middle" font-size="16" font-weight="bold">Camada de Apresentação (Frontend)</text>
+  
+  <!-- Frontend Components -->
+  <rect x="80" y="100" width="170" height="90" rx="3" class="box"/>
+  <text x="165" y="120" class="text-subtitle" text-anchor="middle">Next.js 14</text>
+  <text x="165" y="140" class="text-small" text-anchor="middle" fill="#4b5563">• SSR & Static Generation</text>
+  <text x="165" y="155" class="text-small" text-anchor="middle" fill="#4b5563">• File-based Routing</text>
+  <text x="165" y="170" class="text-small" text-anchor="middle" fill="#4b5563">• TypeScript</text>
+  
+  <rect x="270" y="100" width="170" height="90" rx="3" class="box"/>
+  <text x="355" y="120" class="text-subtitle" text-anchor="middle">React 18</text>
+  <text x="355" y="140" class="text-small" text-anchor="middle" fill="#4b5563">• Hooks & State</text>
+  <text x="355" y="155" class="text-small" text-anchor="middle" fill="#4b5563">• Component-based</text>
+  <text x="355" y="170" class="text-small" text-anchor="middle" fill="#4b5563">• Responsive Design</text>
+  
+  <rect x="460" y="100" width="170" height="90" rx="3" class="box"/>
+  <text x="545" y="120" class="text-subtitle" text-anchor="middle">Tailwind CSS</text>
+  <text x="545" y="140" class="text-small" text-anchor="middle" fill="#4b5563">• Utility-first</text>
+  <text x="545" y="155" class="text-small" text-anchor="middle" fill="#4b5563">• Custom Theme</text>
+  <text x="545" y="170" class="text-small" text-anchor="middle" fill="#4b5563">• Dark Mode</text>
+  
+  <rect x="650" y="100" width="170" height="90" rx="3" class="box"/>
+  <text x="735" y="120" class="text-subtitle" text-anchor="middle">Páginas</text>
+  <text x="735" y="140" class="text-small" text-anchor="middle" fill="#4b5563">• NFTs Explorer</text>
+  <text x="735" y="155" class="text-small" text-anchor="middle" fill="#4b5563">• Tokens Explorer</text>
+  <text x="735" y="170" class="text-small" text-anchor="middle" fill="#4b5563">• History & Contracts</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M 450 210 L 450 250" class="arrow"/>
+  
+  <!-- API Layer -->
+  <rect x="50" y="250" width="800" height="150" rx="5" class="box-api"/>
+  <text x="450" y="275" class="text-white" text-anchor="middle" font-size="16" font-weight="bold">Camada de API (Backend)</text>
+  
+  <!-- API Components -->
+  <rect x="100" y="290" width="180" height="90" rx="3" class="box"/>
+  <text x="190" y="310" class="text-subtitle" text-anchor="middle">API Routes</text>
+  <text x="190" y="330" class="text-small" text-anchor="middle" fill="#4b5563">• /api/nfts</text>
+  <text x="190" y="345" class="text-small" text-anchor="middle" fill="#4b5563">• /api/tokens</text>
+  <text x="190" y="360" class="text-small" text-anchor="middle" fill="#4b5563">• /api/history</text>
+  <text x="190" y="375" class="text-small" text-anchor="middle" fill="#4b5563">• /api/contracts</text>
+  
+  <rect x="310" y="290" width="180" height="90" rx="3" class="box"/>
+  <text x="400" y="310" class="text-subtitle" text-anchor="middle">OpenAPI 3.0</text>
+  <text x="400" y="330" class="text-small" text-anchor="middle" fill="#4b5563">• Especificação</text>
+  <text x="400" y="345" class="text-small" text-anchor="middle" fill="#4b5563">• Documentação</text>
+  <text x="400" y="360" class="text-small" text-anchor="middle" fill="#4b5563">• Schemas JSON</text>
+  <text x="400" y="375" class="text-small" text-anchor="middle" fill="#4b5563">• Exemplos</text>
+  
+  <rect x="520" y="290" width="180" height="90" rx="3" class="box"/>
+  <text x="610" y="310" class="text-subtitle" text-anchor="middle">Serverless</text>
+  <text x="610" y="330" class="text-small" text-anchor="middle" fill="#4b5563">• Auto-scaling</text>
+  <text x="610" y="345" class="text-small" text-anchor="middle" fill="#4b5563">• Edge Functions</text>
+  <text x="610" y="360" class="text-small" text-anchor="middle" fill="#4b5563">• JSON Response</text>
+  <text x="610" y="375" class="text-small" text-anchor="middle" fill="#4b5563">• Error Handling</text>
+  
+  <!-- Arrow 2 -->
+  <path d="M 450 400 L 450 440" class="arrow"/>
+  
+  <!-- Blockchain Layer -->
+  <rect x="50" y="440" width="800" height="150" rx="5" class="box-blockchain"/>
+  <text x="450" y="465" class="text-white" text-anchor="middle" font-size="16" font-weight="bold">Camada de Blockchain</text>
+  
+  <!-- Blockchain Components -->
+  <rect x="100" y="480" width="180" height="90" rx="3" class="box"/>
+  <text x="190" y="500" class="text-subtitle" text-anchor="middle">Web3/Ethers.js</text>
+  <text x="190" y="520" class="text-small" text-anchor="middle" fill="#4b5563">• Contract Calls</text>
+  <text x="190" y="535" class="text-small" text-anchor="middle" fill="#4b5563">• Event Queries</text>
+  <text x="190" y="550" class="text-small" text-anchor="middle" fill="#4b5563">• Transaction Data</text>
+  
+  <rect x="310" y="480" width="180" height="90" rx="3" class="box"/>
+  <text x="400" y="500" class="text-subtitle" text-anchor="middle">RPC Provider</text>
+  <text x="400" y="520" class="text-small" text-anchor="middle" fill="#4b5563">• Testnet/Mainnet</text>
+  <text x="400" y="535" class="text-small" text-anchor="middle" fill="#4b5563">• Block Queries</text>
+  <text x="400" y="550" class="text-small" text-anchor="middle" fill="#4b5563">• State Reads</text>
+  
+  <rect x="520" y="480" width="180" height="90" rx="3" class="box"/>
+  <text x="610" y="500" class="text-subtitle" text-anchor="middle">Smart Contracts</text>
+  <text x="610" y="520" class="text-small" text-anchor="middle" fill="#4b5563">• NFT (ERC-721)</text>
+  <text x="610" y="535" class="text-small" text-anchor="middle" fill="#4b5563">• Token (ERC-20)</text>
+  <text x="610" y="550" class="text-small" text-anchor="middle" fill="#4b5563">• Custom Contracts</text>
+  
+  <!-- Side: Deployment -->
+  <rect x="50" y="620" width="250" height="60" rx="5" class="box-tech"/>
+  <text x="175" y="640" class="text-white" text-anchor="middle" font-weight="bold">Deploy: Vercel/Netlify</text>
+  <text x="175" y="660" class="text-small" text-anchor="middle">Edge Network • CDN • CI/CD</text>
+  
+  <!-- Side: Features -->
+  <rect x="330" y="620" width="250" height="60" rx="5" class="box-tech"/>
+  <text x="455" y="640" class="text-white" text-anchor="middle" font-weight="bold">Funcionalidades</text>
+  <text x="455" y="660" class="text-small" text-anchor="middle">Multi-network • Search • Pagination</text>
+  
+  <!-- Side: Security -->
+  <rect x="610" y="620" width="240" height="60" rx="5" class="box-tech"/>
+  <text x="730" y="640" class="text-white" text-anchor="middle" font-weight="bold">Segurança</text>
+  <text x="730" y="660" class="text-small" text-anchor="middle">Input Validation • Rate Limiting</text>
+</svg>

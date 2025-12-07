@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900">
+  <defs>
+    <style>
+      .box { fill: #ffffff; stroke: #3b82f6; stroke-width: 2; }
+      .box-primary { fill: #3b82f6; stroke: #1e40af; stroke-width: 2; }
+      .box-secondary { fill: #f3f4f6; stroke: #6b7280; stroke-width: 2; }
+      .box-api { fill: #10b981; stroke: #059669; stroke-width: 2; }
+      .box-blockchain { fill: #f59e0b; stroke: #d97706; stroke-width: 2; }
+      .text { fill: #1f2937; font-family: Arial, sans-serif; font-size: 14px; }
+      .text-white { fill: #ffffff; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .text-small { fill: #4b5563; font-family: Arial, sans-serif; font-size: 12px; }
+      .text-title { fill: #1f2937; font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; }
+      .arrow { fill: none; stroke: #6b7280; stroke-width: 2; marker-end: url(#arrowhead); }
+      .arrow-primary { fill: none; stroke: #3b82f6; stroke-width: 2; marker-end: url(#arrowhead-primary); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#6b7280" />
+    </marker>
+    <marker id="arrowhead-primary" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3b82f6" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" class="text-title" text-anchor="middle">Fluxo de Consulta e Visualização</text>
+  
+  <!-- User Layer -->
+  <rect x="300" y="60" width="200" height="60" rx="5" class="box-primary"/>
+  <text x="400" y="85" class="text-white" text-anchor="middle">Usuário</text>
+  <text x="400" y="105" class="text-white" text-anchor="middle">Interface Web</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M 400 120 L 400 160" class="arrow-primary"/>
+  <text x="420" y="145" class="text-small">Busca NFT/Token</text>
+  
+  <!-- Frontend Layer -->
+  <rect x="250" y="160" width="300" height="80" rx="5" class="box"/>
+  <text x="400" y="185" class="text" text-anchor="middle" font-weight="bold">Frontend (Next.js)</text>
+  <text x="400" y="205" class="text-small" text-anchor="middle">React Components</text>
+  <text x="400" y="222" class="text-small" text-anchor="middle">Estado e Validação</text>
+  
+  <!-- Arrow 2 -->
+  <path d="M 400 240 L 400 280" class="arrow-primary"/>
+  <text x="430" y="265" class="text-small">Requisição HTTP</text>
+  
+  <!-- API Layer -->
+  <rect x="250" y="280" width="300" height="100" rx="5" class="box-api"/>
+  <text x="400" y="305" class="text-white" text-anchor="middle" font-weight="bold">API Routes (Next.js)</text>
+  <text x="400" y="325" class="text-white" text-anchor="middle">/api/nfts</text>
+  <text x="400" y="343" class="text-white" text-anchor="middle">/api/tokens</text>
+  <text x="400" y="361" class="text-white" text-anchor="middle">/api/history</text>
+  
+  <!-- Arrow 3 -->
+  <path d="M 400 380 L 400 420" class="arrow-primary"/>
+  <text x="440" y="405" class="text-small">Query Blockchain</text>
+  
+  <!-- Blockchain Layer -->
+  <rect x="250" y="420" width="300" height="100" rx="5" class="box-blockchain"/>
+  <text x="400" y="445" class="text-white" text-anchor="middle" font-weight="bold">Integração Blockchain</text>
+  <text x="400" y="465" class="text-white" text-anchor="middle">RPC Provider</text>
+  <text x="400" y="483" class="text-white" text-anchor="middle">Smart Contracts</text>
+  <text x="400" y="501" class="text-white" text-anchor="middle">Web3/Ethers.js</text>
+  
+  <!-- Arrow 4 -->
+  <path d="M 400 520 L 400 560" class="arrow"/>
+  <text x="435" y="545" class="text-small">Dados Formatados</text>
+  
+  <!-- Response Processing -->
+  <rect x="250" y="560" width="300" height="80" rx="5" class="box-secondary"/>
+  <text x="400" y="585" class="text" text-anchor="middle" font-weight="bold">Processamento</text>
+  <text x="400" y="605" class="text-small" text-anchor="middle">Formatação JSON</text>
+  <text x="400" y="622" class="text-small" text-anchor="middle">Validação e Cache</text>
+  
+  <!-- Arrow 5 -->
+  <path d="M 400 640 L 400 680" class="arrow"/>
+  <text x="425" y="665" class="text-small">JSON Response</text>
+  
+  <!-- UI Update -->
+  <rect x="250" y="680" width="300" height="80" rx="5" class="box"/>
+  <text x="400" y="705" class="text" text-anchor="middle" font-weight="bold">Atualização da UI</text>
+  <text x="400" y="725" class="text-small" text-anchor="middle">Renderização de Cards</text>
+  <text x="400" y="742" class="text-small" text-anchor="middle">Exibição de Dados</text>
+  
+  <!-- Arrow 6 -->
+  <path d="M 400 760 L 400 800" class="arrow-primary"/>
+  <text x="440" y="785" class="text-small">Visualização Final</text>
+  
+  <!-- Final Display -->
+  <rect x="300" y="800" width="200" height="60" rx="5" class="box-primary"/>
+  <text x="400" y="825" class="text-white" text-anchor="middle">Usuário Visualiza</text>
+  <text x="400" y="845" class="text-white" text-anchor="middle">Resultados</text>
+  
+  <!-- Side Notes -->
+  <rect x="50" y="280" width="150" height="60" rx="5" class="box-secondary"/>
+  <text x="125" y="300" class="text-small" text-anchor="middle">Validação de</text>
+  <text x="125" y="315" class="text-small" text-anchor="middle">Parâmetros e</text>
+  <text x="125" y="330" class="text-small" text-anchor="middle">Tratamento de Erros</text>
+  
+  <rect x="600" y="280" width="150" height="60" rx="5" class="box-secondary"/>
+  <text x="675" y="300" class="text-small" text-anchor="middle">OpenAPI 3.0</text>
+  <text x="675" y="315" class="text-small" text-anchor="middle">Especificação</text>
+  <text x="675" y="330" class="text-small" text-anchor="middle">Documentada</text>
+  
+  <!-- Arrows to side notes -->
+  <path d="M 250 320 L 200 320" class="arrow"/>
+  <path d="M 550 320 L 600 320" class="arrow"/>
+</svg>
