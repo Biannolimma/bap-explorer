@@ -62,7 +62,7 @@ export default function NFTsPage() {
             <div className="flex gap-4">
               <select
                 value={searchType}
-                onChange={(e) => setSearchType(e.target.value as any)}
+                onChange={(e) => setSearchType(e.target.value as 'tokenId' | 'owner' | 'contract')}
                 className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700"
               >
                 <option value="tokenId">Token ID</option>
