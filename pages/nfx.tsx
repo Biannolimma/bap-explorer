@@ -161,7 +161,7 @@ export default function NfxPage() {
                 </button>
                 <div className="flex gap-2">
                   {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                    let pageNum
+                    let pageNum: number
                     if (totalPages <= 5) {
                       pageNum = i + 1
                     } else if (page <= 3) {
