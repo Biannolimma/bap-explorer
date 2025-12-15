@@ -14,6 +14,7 @@ A comprehensive blockchain explorer for the Block And Play ecosystem, providing 
 - ⚠️ **Penalties**: Track network penalties and slashing events
 
 ### Asset Explorer
+- 🏝️ **NFX Explorer**: Explore Non-Fungible eXpanding Islands - unique, expandable digital spaces
 - 🎨 **NFT Explorer**: Browse and query NFT collections, metadata, and ownership
 - 💰 **Token Explorer**: View token balances, transfers, and holder information
 - 📈 **Evolution History**: Track asset transformations and lifecycle events
@@ -56,6 +57,7 @@ Edit `.env.local` with your configuration:
 - `NEXT_PUBLIC_API_URL`: API endpoint URL
 - `NEXT_PUBLIC_RPC_URL`: RPC endpoint URL
 - `NEXT_PUBLIC_WS_URL`: WebSocket endpoint URL (optional, for real-time updates)
+- `NEXT_PUBLIC_NFX_CONTRACT`: NFX contract address (for Non-Fungible eXpanding Islands)
 - `NEXT_PUBLIC_NFT_CONTRACT`: NFT contract address
 - `NEXT_PUBLIC_TOKEN_CONTRACT`: Token contract address
 - `BLOCKCHAIN_API_URL`: Backend blockchain API URL (server-side)
@@ -78,7 +80,8 @@ bap-explorer/
 │   ├── useTransactions.ts  # Hook for transactions data
 │   ├── usePools.ts        # Hook for validation pools data
 │   ├── usePenalties.ts    # Hook for penalties data
-│   └── useMetrics.ts      # Hook for network metrics
+│   ├── useMetrics.ts      # Hook for network metrics
+│   └── useNfx.ts          # Hook for NFX data (useNfxList, useNfxStatus)
 ├── pages/              # Next.js pages
 │   ├── api/           # API routes (backend integration layer)
 │   │   ├── blocks.ts          # Blocks endpoint
@@ -86,6 +89,8 @@ bap-explorer/
 │   │   ├── pools.ts          # Validation pools endpoint
 │   │   ├── penalties.ts      # Penalties endpoint
 │   │   ├── metrics.ts        # Network metrics endpoint
+│   │   ├── nfx.ts            # NFX list endpoint
+│   │   ├── nfx/[id].ts       # NFX details endpoint
 │   │   ├── nfts.ts           # NFT endpoint
 │   │   ├── tokens.ts         # Token endpoint
 │   │   ├── history.ts        # Evolution history endpoint
@@ -98,6 +103,8 @@ bap-explorer/
 │   ├── transactions.tsx # Transactions explorer page
 │   ├── pools.tsx      # Validation pools page
 │   ├── penalties.tsx  # Penalties page
+│   ├── nfx.tsx        # NFX list page
+│   ├── nfx/[id].tsx   # NFX detail page
 │   ├── nfts.tsx       # NFT explorer page
 │   ├── tokens.tsx     # Token explorer page
 │   ├── history.tsx    # Evolution history page
@@ -154,6 +161,8 @@ All API endpoints are documented using OpenAPI 3.0 specification:
 - `GET /api/metrics` - Get network metrics and statistics
 
 #### Asset Explorer Endpoints
+- `GET /api/nfx` - List NFX (Non-Fungible eXpanding Islands) with pagination
+- `GET /api/nfx/{id}` - Get detailed NFX information including statistics, governance, events, assets, partners, and subspaces
 - `GET /api/nfts` - Query NFTs by token ID, owner, or contract
 - `GET /api/tokens` - Get token information and transfers
 - `GET /api/history` - Retrieve evolution history for assets
@@ -191,6 +200,214 @@ For detailed information about the system architecture, data flow, and technical
 - **[docs/arquitetura.md](./docs/arquitetura.md)** - Comprehensive architecture documentation in Portuguese
 - **[docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md)** - English version of architecture documentation
 - **[docs/CONTRACT_INTEGRATION.md](./docs/CONTRACT_INTEGRATION.md)** - Smart contract integration guide
+
+## NFX - Non-Fungible eXpanding Islands
+
+NFX (Non-Fungible eXpanding Islands) are a revolutionary concept in the Block And Play ecosystem, representing unique, ownable, and expandable digital spaces. Unlike traditional NFTs, NFX can grow, evolve, and generate value over time through community engagement and asset accumulation.
+
+### What is NFX?
+
+NFX are digital territories within the BAP ecosystem that serve as:
+- **Unique Digital Spaces**: Each NFX is a one-of-a-kind virtual area with its own identity, branding, and characteristics
+- **Expandable Territories**: NFX can grow in size and complexity over time
+- **Asset Repositories**: Owners can deposit and manage various digital assets within their NFX
+- **Collaboration Hubs**: Multiple partners can contribute to and benefit from an NFX
+- **Value Generators**: NFX accumulate value through reputation, assets, partnerships, and activity
+
+### Key Features
+
+#### Core Properties
+- **ID**: Unique identifier for each NFX
+- **Name**: Custom name chosen by the owner
+- **Owner**: Blockchain address of the current owner
+- **Size**: Virtual space measured in square meters (m²)
+- **Reputation**: Community trust score (0-100) based on activity and governance
+- **Value**: Current market value in BAP tokens
+- **Branding**: Category or theme (Technology, Arts, Business, Gaming, etc.)
+- **Premium Status**: Enhanced features for premium NFX
+
+#### Advanced Features
+- **Assets Count**: Number of deposited digital assets (NFTs, tokens, contracts)
+- **Partners**: Collaborators who contribute to the NFX
+- **Subspaces**: Subdivisions within the NFX for specialized purposes
+- **Statistics**: Visits, active users, daily transactions, average value
+- **Governance**: Voting power, proposals, and community decisions
+- **Event History**: Complete timeline of NFX activities and changes
+
+### Using the NFX Explorer
+
+#### Browsing NFX
+Visit `/nfx` to see all available NFX in a responsive grid layout:
+```
+http://localhost:3000/nfx
+```
+
+Features include:
+- Grid view with key information for each NFX
+- Visual distinction for premium NFX
+- Pagination for easy navigation
+- Real-time statistics overview
+- Quick access to detailed information
+
+#### Viewing NFX Details
+Click on any NFX to view comprehensive details:
+```
+http://localhost:3000/nfx/nfx-1
+```
+
+The detail page includes:
+- **Overview**: Core properties, owner, size, value, reputation
+- **Statistics**: Total visits, active users, daily transactions, average value
+- **Governance Rules**: Voting power, proposals, decisions made
+- **Event History**: Timeline of all NFX activities
+- **Deposited Assets**: Complete list of assets stored in the NFX
+- **Partners**: Collaborators and their contributions
+- **Subspaces**: Subdivisions within the NFX with their status
+- **Metadata**: Creation date, last activity timestamp
+
+### Integration with Blockchain
+
+The NFX feature currently uses mock data for demonstration. To integrate with your blockchain:
+
+#### 1. Set Environment Variables
+```bash
+# Add to .env.local
+NEXT_PUBLIC_NFX_CONTRACT=0x... # Your NFX smart contract address
+```
+
+#### 2. Update API Routes
+
+**List NFX** (`/pages/api/nfx.ts`):
+```typescript
+// Replace mock data with blockchain query
+const contract = new ethers.Contract(nfxContractAddress, abi, provider)
+const nfxList = await contract.getAllNfx()
+// Map blockchain data to expected format
+```
+
+**NFX Details** (`/pages/api/nfx/[id].ts`):
+```typescript
+// Query detailed NFX information from blockchain
+const nfxData = await contract.getNfxById(id)
+const statistics = await contract.getNfxStatistics(id)
+const governance = await contract.getNfxGovernance(id)
+// Combine and format data
+```
+
+#### 3. Smart Contract Integration
+
+The NFX smart contract should implement methods for:
+- `getAllNfx()`: List all NFX with pagination
+- `getNfxById(id)`: Get basic NFX properties
+- `getNfxStatistics(id)`: Fetch usage statistics
+- `getNfxGovernance(id)`: Get governance information
+- `getNfxEvents(id)`: Retrieve event history
+- `getDepositedAssets(id)`: List deposited assets
+- `getPartners(id)`: Get partner information
+- `getSubspaces(id)`: List subspaces
+
+#### 4. Using Custom Hooks
+
+The explorer provides two custom hooks for NFX data:
+
+```typescript
+import { useNfxList, useNfxStatus } from '@/hooks/useNfx'
+
+// In your component
+function MyComponent() {
+  // List NFX with pagination
+  const { nfx, loading, error, total, refetch } = useNfxList(page, limit)
+  
+  // Get detailed NFX status
+  const { nfx: detail, loading, error, refetch } = useNfxStatus('nfx-1')
+}
+```
+
+Both hooks provide:
+- Automatic loading states
+- Error handling
+- Refetch capability
+- Type-safe data structures
+
+### Example Usage
+
+```typescript
+// pages/my-nfx-page.tsx
+import { useNfxList } from '@/hooks/useNfx'
+
+export default function MyNfxPage() {
+  const { nfx, loading, error, total } = useNfxList(1, 12)
+  
+  if (loading) return <div>Loading...</div>
+  if (error) return <div>Error: {error.message}</div>
+  
+  return (
+    <div>
+      <h1>NFX List ({total} total)</h1>
+      {nfx.map(item => (
+        <div key={item.id}>
+          <h2>{item.name}</h2>
+          <p>Owner: {item.owner}</p>
+          <p>Size: {item.size} m²</p>
+          <p>Value: {item.value} BAP</p>
+        </div>
+      ))}
+    </div>
+  )
+}
+```
+
+### NFX Data Structure
+
+#### List Item (Nfx)
+```typescript
+{
+  id: string              // "nfx-1"
+  name: string            // "Innovation District #1"
+  owner: string           // "0x..."
+  size: number            // 5000 (m²)
+  reputation: number      // 85 (0-100)
+  value: number           // 500000 (BAP tokens)
+  branding: string        // "Technology"
+  premium: boolean        // true
+  assetsCount: number     // 150
+  partners: number        // 12
+  subspaces: number       // 5
+}
+```
+
+#### Detail View (NfxDetail)
+Extends the base NFX with:
+- `description`: Detailed description
+- `createdAt`: ISO timestamp
+- `lastActivity`: ISO timestamp
+- `statistics`: Object with totalVisits, activeUsers, dailyTransactions, averageValue
+- `governance`: Object with votingPower, proposals, decisions array
+- `events`: Array of event objects with id, type, description, timestamp, value
+- `depositedAssets`: Array of asset objects
+- `partnersList`: Array of partner objects
+- `subspacesList`: Array of subspace objects
+
+### Best Practices
+
+1. **Consistent Terminology**: Always use "NFX" (not "ilha digital" or other terms) in UI and documentation
+2. **Type Safety**: Use the provided TypeScript interfaces for all NFX data
+3. **Error Handling**: Always handle loading and error states in components
+4. **Pagination**: Implement pagination for large NFX lists
+5. **Real-time Updates**: Consider WebSocket integration for live NFX updates
+6. **Caching**: Implement caching strategy for frequently accessed NFX data
+
+### Future Enhancements
+
+Planned features for NFX:
+- Real-time activity monitoring
+- NFX comparison tools
+- Value history charts
+- Social features (comments, ratings)
+- NFX marketplace integration
+- Advanced filtering and search
+- Export NFX data
+- NFX analytics dashboard
 
 ## Current Status: Mock Data Implementation
 
@@ -288,6 +505,7 @@ The explorer provides custom React hooks for easy data fetching:
 import { useBlocks } from '@/hooks/useBlocks'
 import { useTransactions } from '@/hooks/useTransactions'
 import { useMetrics } from '@/hooks/useMetrics'
+import { useNfxList, useNfxStatus } from '@/hooks/useNfx'
 
 function MyComponent() {
   // Fetch blocks with pagination
@@ -298,6 +516,12 @@ function MyComponent() {
   
   // Fetch and auto-refresh metrics every 30 seconds
   const { metrics } = useMetrics(true, 30000)
+  
+  // Fetch NFX list with pagination
+  const { nfx, loading, error, total } = useNfxList(1, 12)
+  
+  // Fetch detailed NFX status
+  const { nfx: nfxDetail } = useNfxStatus('nfx-1')
   
   // Manual refetch
   const handleRefresh = () => refetch()
@@ -311,6 +535,9 @@ Available hooks:
 - `useTransaction(txHash)` - Fetch single transaction
 - `usePools(status?)` - Fetch validation pools
 - `usePenalties(page, limit, type?)` - Fetch penalties
+- `useMetrics(autoRefresh?, interval?)` - Fetch network metrics
+- `useNfxList(page, limit)` - Fetch NFX list with pagination
+- `useNfxStatus(nfxId)` - Fetch detailed NFX status
 - `useMetrics(autoRefresh?, interval?)` - Fetch network metrics
 
 ### Build for Production
