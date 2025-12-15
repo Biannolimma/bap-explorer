@@ -84,6 +84,16 @@ export default function Home() {
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4 text-center">Assets & Smart Contracts</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <Link href="/nfx" className="group">
+                <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
+                  <div className="text-4xl mb-4">🏝️</div>
+                  <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">NFX</h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Explore Non-Fungible eXpanding Islands - unique digital spaces
+                  </p>
+                </div>
+              </Link>
+
               <Link href="/nfts" className="group">
                 <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
                   <div className="text-4xl mb-4">🎨</div>

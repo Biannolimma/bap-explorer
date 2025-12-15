@@ -17,6 +17,7 @@ export default function Layout({ children }: LayoutProps) {
     { href: '/transactions', label: 'Transactions' },
     { href: '/pools', label: 'Pools' },
     { href: '/penalties', label: 'Penalties' },
+    { href: '/nfx', label: 'NFX' },
     { href: '/nfts', label: 'NFTs' },
     { href: '/tokens', label: 'Tokens' },
     { href: '/docs', label: 'Docs' },
