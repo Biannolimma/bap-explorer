@@ -26,46 +26,104 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <Link href="/nfts" className="group">
-              <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
-                <div className="text-4xl mb-4">🎨</div>
-                <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">NFTs</h2>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Browse and query NFT collections, metadata, and ownership
-                </p>
-              </div>
-            </Link>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 text-center">Blockchain Explorer</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <Link href="/dashboard" className="group">
+                <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
+                  <div className="text-4xl mb-4">📊</div>
+                  <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">Dashboard</h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Network overview and metrics
+                  </p>
+                </div>
+              </Link>
 
-            <Link href="/tokens" className="group">
-              <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
-                <div className="text-4xl mb-4">💰</div>
-                <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">Tokens</h2>
-                <p className="text-gray-600 dark:text-gray-400">
-                  View token balances, transfers, and holders
-                </p>
-              </div>
-            </Link>
+              <Link href="/blocks" className="group">
+                <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
+                  <div className="text-4xl mb-4">📦</div>
+                  <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">Blocks</h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Browse blockchain blocks
+                  </p>
+                </div>
+              </Link>
 
-            <Link href="/history" className="group">
-              <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
-                <div className="text-4xl mb-4">📈</div>
-                <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">Evolution History</h2>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Track asset evolution and transformation history
-                </p>
-              </div>
-            </Link>
+              <Link href="/transactions" className="group">
+                <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
+                  <div className="text-4xl mb-4">💸</div>
+                  <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">Transactions</h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    View all transactions
+                  </p>
+                </div>
+              </Link>
 
-            <Link href="/contracts" className="group">
-              <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
-                <div className="text-4xl mb-4">📜</div>
-                <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">Smart Contracts</h2>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Explore deployed contracts and their interactions
-                </p>
-              </div>
-            </Link>
+              <Link href="/pools" className="group">
+                <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
+                  <div className="text-4xl mb-4">🏊</div>
+                  <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">Validation Pools</h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Explore validator pools
+                  </p>
+                </div>
+              </Link>
+
+              <Link href="/penalties" className="group">
+                <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
+                  <div className="text-4xl mb-4">⚠️</div>
+                  <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">Penalties</h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    View network penalties
+                  </p>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 text-center">Assets & Smart Contracts</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <Link href="/nfts" className="group">
+                <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
+                  <div className="text-4xl mb-4">🎨</div>
+                  <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">NFTs</h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Browse and query NFT collections, metadata, and ownership
+                  </p>
+                </div>
+              </Link>
+
+              <Link href="/tokens" className="group">
+                <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
+                  <div className="text-4xl mb-4">💰</div>
+                  <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">Tokens</h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    View token balances, transfers, and holders
+                  </p>
+                </div>
+              </Link>
+
+              <Link href="/history" className="group">
+                <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
+                  <div className="text-4xl mb-4">📈</div>
+                  <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">Evolution History</h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Track asset evolution and transformation history
+                  </p>
+                </div>
+              </Link>
+
+              <Link href="/contracts" className="group">
+                <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-2 border-transparent hover:border-primary-500">
+                  <div className="text-4xl mb-4">📜</div>
+                  <h2 className="text-2xl font-bold mb-2 group-hover:text-primary-600">Smart Contracts</h2>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    Explore deployed contracts and their interactions
+                  </p>
+                </div>
+              </Link>
+            </div>
           </div>
 
           <div className="mt-16 max-w-4xl mx-auto">

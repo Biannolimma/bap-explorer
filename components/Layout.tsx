@@ -12,10 +12,13 @@ export default function Layout({ children }: LayoutProps) {
 
   const navItems = [
     { href: '/', label: 'Home' },
+    { href: '/dashboard', label: 'Dashboard' },
+    { href: '/blocks', label: 'Blocks' },
+    { href: '/transactions', label: 'Transactions' },
+    { href: '/pools', label: 'Pools' },
+    { href: '/penalties', label: 'Penalties' },
     { href: '/nfts', label: 'NFTs' },
     { href: '/tokens', label: 'Tokens' },
-    { href: '/history', label: 'Evolution' },
-    { href: '/contracts', label: 'Contracts' },
     { href: '/docs', label: 'Docs' },
   ]
 
